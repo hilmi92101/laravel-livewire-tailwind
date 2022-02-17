@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Models\Project;
+use App\Http\Resources\Project as ProjectResource;
 
 class ProjectsController extends Controller
 {
@@ -16,7 +17,9 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::where('user_id', auth()->user()->id)
+            ->select(['id', 'name', 'created_at', 'updated_at'])
+            ->get();
         return $projects;
 
     }
@@ -38,9 +41,10 @@ class ProjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Project $project)
     {
-        //
+        //return $project;
+        return new ProjectResource($project); 
     }
 
     /**
