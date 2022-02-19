@@ -64,6 +64,7 @@ class Handler extends ExceptionHandler
         if($request->is('api*')){ 
             if($e instanceof \Illuminate\Validation\ValidationException){ 
                 return response([ 
+                    'instanceof' => 'ValidationException', 
                     'status' => 'error', 
                     'errors' => $e->errors(), 
                 ], 422); 
@@ -71,12 +72,14 @@ class Handler extends ExceptionHandler
 
             if($e instanceof \Illuminate\Auth\Access\AuthorizationException){ 
                 return response([ 
+                    'instanceof' => 'AuthorizationException', 
                     'status' => 'error', 
                     'error' => $e->getMessage(), 
                 ], 403); 
             } 
             if($e instanceof \Illuminate\Database\Eloquent\ModelNotFoundException || $e instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException){ 
                 return response([ 
+                    'instanceof' => 'ModelNotFoundException',
                     'status' => 'error', 
                     'error' => 'Resource Not Found', 
                 ], 404); 
@@ -84,12 +87,15 @@ class Handler extends ExceptionHandler
             // if token is wrong 
             if($e instanceof \Illuminate\Auth\AuthenticationException){ 
                 return response([ 
+                    'instanceof' => 'AuthenticationException',
                     'status' => 'error', 
                     'error' => $e->getMessage(), 
                 ], 401); 
             } 
             // if none above exception is caught 
             return response([ 
+                'request' => $request->all(), 
+                'e' => $e, 
                 'status' => 'error', 
                 'error' => 'Something went wrong', 
             ], 500); 

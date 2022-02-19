@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Task;
 use App\Http\Requests\TaskRequest;
+use App\Http\Resources\Task as TaskResource;
 
 class TasksController extends Controller
 {
@@ -22,7 +23,8 @@ class TasksController extends Controller
         // 2nd param is data we want to pass
         $this->authorize('create', [Task::class, $request->project_id]);
         $task = Task::create($request->all());
-        return $task;
+        return new TaskResource($task);
+
     }
 
     /**
@@ -36,7 +38,7 @@ class TasksController extends Controller
     {
         $this->authorize('update', $task);
         $task->update($request->all());
-        return $task;
+        return new TaskResource($task);
     }
 
     /**
