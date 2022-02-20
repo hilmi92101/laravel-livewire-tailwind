@@ -14,7 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    echo Hash::make('1q2w3e4r');
-
-    //return view('welcome');
+    return view('app');
 });
+
+Route::get('/{vue_capture?}', function () {
+    return view('app');
+})->where('vue_capture','[\/\w\.-]*');
+
+// Route::get('{any}', function () {
+//     return view('app');
+// })->where('any','.*');

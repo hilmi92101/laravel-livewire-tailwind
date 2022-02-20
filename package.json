@@ -10,9 +10,16 @@
         "production": "mix --production"
     },
     "devDependencies": {
+        "@types/webpack-env": "^1.16.3",
+        "@vue/compiler-sfc": "^3.2.31",
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
+        "laravel-mix-vue3": "^0.7.0",
         "lodash": "^4.17.19",
-        "postcss": "^8.1.14"
+        "postcss": "^8.1.14",
+        "vue-loader": "^17.0.0"
+    },
+    "dependencies": {
+        "vue": "^3.2.29"
     }
 }
