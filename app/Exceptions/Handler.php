@@ -92,6 +92,17 @@ class Handler extends ExceptionHandler
                     'error' => $e->getMessage(), 
                 ], 401); 
             } 
+
+            // if rate limit hit
+            // refer RouteServiceProvider.php, method configureRateLimiting()
+            if($e instanceof \Illuminate\Http\Exceptions\ThrottleRequestsException){ 
+                return response([ 
+                    'instanceof' => 'ThrorrleRequestsException',
+                    'status' => 'error', 
+                    'error' => $e->getMessage(), 
+                ], 429); 
+            } 
+
             // if none above exception is caught 
             return response([ 
                 'request' => $request->all(), 
