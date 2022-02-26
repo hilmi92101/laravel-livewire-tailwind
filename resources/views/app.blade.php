@@ -6,7 +6,7 @@
 
         <title>Laravel Sanctum App</title>
 
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}?v={{ mt_rand() }}">
 
     </head>
     <body class="antialiased">
@@ -14,5 +14,5 @@
 
         </div>
     </body>
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('js/app.js') }}?v={{ mt_rand() }}"></script>
 </html>
