@@ -19694,10 +19694,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "min-h-10 bg-blue-600"
+  "class": "min-h-10 bg-blue text-red-200 flex items-center justify-center"
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("footer", _hoisted_1, " Footer ");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("footer", _hoisted_1, " © 2022, All Rights Reserved. ");
 }
 
 /***/ }),
@@ -19716,10 +19716,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 var _hoisted_1 = {
-  "class": "min-h-10 bg-blue-600"
+  "class": "min-h-10 bg-blue-800 flex justify-between items-center"
 };
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<h1 class=\"text-4xl ml-6 text-white\">Projectify</h1><ul class=\"flex\"><li class=\"mr-6\"><a href=\"#\" class=\"text-blue-600 hover:text-white\">Dashboard</a></li><li class=\"mr-6\"><a href=\"#\" class=\"text-blue-600 hover:text-white\">Projects</a></li><li class=\"mr-6\"><a href=\"#\" class=\"text-blue-600 hover:text-white\">Login</a></li><li class=\"mr-6\"><a href=\"#\" class=\"text-blue-600 hover:text-white\">Logout</a></li></ul>", 2);
+
+var _hoisted_4 = [_hoisted_2];
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("header", _hoisted_1, " Header ");
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("header", _hoisted_1, _hoisted_4);
 }
 
 /***/ }),
