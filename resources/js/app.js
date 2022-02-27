@@ -3,9 +3,9 @@ require('./bootstrap');
 import { createApp } from 'vue';
 import router from './routes';
 
-import ExampleComponent from './components/ExampleComponent.vue';
+import App from './components/App.vue';
 
-const app = createApp(ExampleComponent);
+const app = createApp(App);
 
 app.use(router);
 

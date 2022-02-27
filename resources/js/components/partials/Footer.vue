@@ -1,16 +1,7 @@
 <template>  
-    <div>
-        <div class="text-lg mt-6 p-4 text-red-500"> 
-            <h1>Home22222</h1> 
-            
-        </div>
-        
-        <router-view></router-view>
-
-
-
-
-    </div>
+    <footer class="min-h-10 bg-blue-600">
+        Footer
+    </footer>
 </template>  
 <script>  
     export default {  
